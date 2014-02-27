@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>JS Highlight</title>
+  <link rel="stylesheet" href="">
+</head>
+<body>
+  <p>
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ut purus vitae libero aliquet tincidunt. Proin consectetur malesuada ante. Sed egestas molestie erat a egestas. Fusce non ante a justo cursus vehicula eget vel nibh. Pellentesque enim nisl, ullamcorper vel ante a, rutrum mollis augue. Duis consectetur euismod suscipit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Morbi ut blandit dui. Fusce vel cursus dui. Fusce molestie ultricies convallis. Mauris diam nibh, viverra eget leo eu, tempor vehicula sem. In imperdiet ipsum nec imperdiet porta. Ut sit amet vestibulum dolor. Integer quam mi, hendrerit et pharetra ac, interdum vitae nunc.
+  </p>
+
+  <script src="http://code.jquery.com/jquery-2.0.2.min.js"></script>
+  <script type="text/javascript">
+    function getSelectionText() {
+        var text = "";
+        if (window.getSelection) {
+            text = window.getSelection().toString();
+        } else if (document.selection && document.selection.type != "Control") {
+            text = document.selection.createRange().text;
+        }
+        return text;
+    }
+    $(document).ready(function (){
+       $('p').mouseup(function (e){
+           if (getSelectionText() != ""){
+               window.open( "http://twitter.com/share?text=" + getSelectionText() + "&via=denzildoyle&hashtags=goodcode", 'twitter-share', 'width=550,height=235');
+                 return false;
+           }
+          //TO DO: If the number of chars crosses 140 dont show twitter
+       })
+    })
+  </script>
+</body>
+</html>
