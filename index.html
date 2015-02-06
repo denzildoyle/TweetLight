@@ -24,11 +24,10 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ut purus vitae l
     }
     $(document).ready(function (){
        $('p').mouseup(function (e){
-           if (getSelectionText() != ""){
+           if (getSelectionText() != "" && getSelectionText().length < 120 ){
                window.open( "http://twitter.com/share?text=" + getSelectionText() + "&via=denzildoyle&hashtags=goodcode", 'twitter-share', 'width=550,height=235');
                  return false;
            }
-          //TO DO: If the number of chars crosses 140 dont show twitter
        })
     })
   </script>
